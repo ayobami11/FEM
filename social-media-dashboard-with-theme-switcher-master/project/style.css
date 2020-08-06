@@ -1,24 +1,22 @@
 /* CSS Variables */
 :root {
     /* Primary */
-
-    --lime-green: hsl(163, 72%, 41%);
-    --bright-red: hsl(356, 69%, 56%);
+        --lime-green: hsl(163, 72%, 41%);
+        --bright-red: hsl(356, 69%, 56%);
 
         /* Media */
         --facebook: hsl(208, 92%, 53%);
         --twitter: hsl(203, 89%, 53%);
-        --instagram: linear-gradient(45deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+        --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
         --youtube: hsl(348, 97%, 39%);
 
         /* Dark mode */
-        --toggle-dark: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+        --toggle-dark: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 
         /* Light mode */
         --toggle-light: hsl(230, 22%, 74%);
 
     /* Neutral */
-
         /* Dark mode */
         --very-dark-blue-bg: hsl(230, 17%, 14%);
         --very-dark-blue-top-bg-pattern: hsl(232, 19%, 15%);
@@ -46,19 +44,21 @@ html {
 }
 
 body {
+    background-color: var(--white-bg);
     font-family: 'Inter', sans-serif;
 }
 
 /* Header section */
 header {
     background-color: var(--very-pale-blue-top-bg-pattern);
+    border-radius: 0 0 30px 30px;
     color: var(--dark-grayish-blue-text);
-    height: 25vh;
+    height: 30vh;
+    padding: 2em 0;
 }
 
 #header-div {
     align-items: center;
-    border: 1px solid red;
     justify-content: space-between;
     margin: 0 auto;
     width: 80%;
@@ -68,23 +68,27 @@ h1 {
     color: var(--very-dark-blue-text);
 }
 
-#dark-mode {
+/* Toggle button */
+#dark-mode-toggle {
     align-items: center;
-    border: 1px solid red;
     justify-content: space-between;
     width: 150px;
 }
 
-/* Toggle button */
 #toggle {
     appearance: none;
     background-color: var(--toggle-light);
     border-radius: 30px;
-    /* box-shadow: 0px 2px 2px 1px var(--toggle-light); */
+    box-shadow: 0px 0px 0px 2px rgb(0, 0, 0);
     height: 23px;
     outline: none;
     position: relative;
     width: 46px;
+}
+
+#toggle:hover {
+    background-image: var(--toggle-dark);
+    cursor: pointer;
 }
 
 #toggle::before {
@@ -109,21 +113,166 @@ h1 {
 }
 
 /* Main section */
+main {
+    margin-top: -5em;
+}
+
 section {
-    border: 1px solid red;
     margin: 0 auto;
     width: 80%;
 }
 
 h2 {
     color: var(--dark-grayish-blue-text);
+    margin: 1.5em 0;
 }
 
-/* Card class section */
-.card {
-    background-color: var(--light-grayish-blue-card-bg);
-    border: 1px solid red;
+/* Cards section */
+#cards-section {
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
+.card {
+    align-items: center;
+    background-color: var(--very-pale-blue-top-bg-pattern);
+    border-radius: 5px;
+    flex: 1 1 250px;
+    height: 250px;
+    justify-content: center;
+    margin: 1em;
+    text-align: center;
+    max-width: 300px;
+}
+
+.card:hover {
+    background-color: var(--light-grayish-blue-card-bg);
+    cursor: pointer;
+}
+
+.facebook {
+    border-top: 4px solid var(--facebook);
+}
+
+.twitter {
+    border-top: 4px solid var(--twitter);
+}
+
+.instagram {
+    background-image: linear-gradient(to right, var(--very-pale-blue-top-bg-pattern), var(--very-pale-blue-top-bg-pattern)), var(--instagram);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    border-top: 4px solid transparent;
+}
+
+.instagram:hover {
+    background-image: linear-gradient(to right, var(--light-grayish-blue-card-bg), var(--light-grayish-blue-card-bg)), var(--instagram);
+    cursor: pointer;
+}
+
+.youtube {
+    border-top: 4px solid var(--youtube);
+}
+
+.account {
+    align-items: center;
+}
+
+.account-name {
+    color: var(--dark-grayish-blue-text);
+    margin-left: 0.6em;
+}
+
+.card .followers-today {
+    margin: 1em 0;
+    margin-left: 0.3em;
+}
+
+.card figure.positive,
+.card figure.negative {
+    justify-content: center;
+}
+
+.followers-count {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.followers {
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.followers-today {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Today card section */
+#today-cards-section {
+    font-size: 0.875rem;
+}
+
+.today-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.today-card {
+    align-items: center;
+    background-color: var(--very-pale-blue-top-bg-pattern);
+    border-radius: 5px;
+    flex: 1 1 270px;
+    flex-direction: column;
+    justify-content: center;
+    height: 140px;
+    margin: 1em;
+    max-width: 300px;
+}
+
+.today-card:hover {
+    background-color: var(--light-grayish-blue-card-bg);
+    cursor: pointer;
+}
+
+.today-card .flex {
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.flex.ratings {
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flex.ratings .followers-today {
+    margin-left: 0.3em;
+}
+
+.reactions {
+    color: var(--dark-grayish-blue-text);
+}
+
+.today-card .followers-count {
+    font-size: 2rem;
+}
+
+/* Footer section */
+footer {
+    background-color: rgb(64, 224, 208);
+    padding: 1em 0;
+}
+
+.attribution {
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(29, 100%, 31%);
+}
+
 
 /* General classes */
 .flex {
@@ -134,6 +283,12 @@ h2 {
     font-weight: 700;
 }
 
+.positive,
+.negative,
+.today-card figure:first-child {
+    align-items: center;
+}
+
 .positive {
     color: var(--lime-green);
 }
@@ -142,5 +297,96 @@ h2 {
     color: var(--bright-red);
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+/* Dark mode styles */
+
+/* General styles */
+.dark-mode {
+    background-color: var(--very-dark-blue-bg);
+}
+
+/* Header section */
+.dark-mode header {
+    background-color: var(--very-dark-blue-top-bg-pattern);
+    color: var(--desaturated-blue-text);
+}
+
+.dark-mode h1,
+.dark-mode h2 {
+    color: var(--white-text);
+}
+
+/* Cards section */
+.dark-mode .card,
+.dark-mode .today-card {
+    background-color: var(--very-dark-blue-top-bg-pattern);
+    color: var(--white-text);
+}
+
+.dark-mode .card:hover,
+.dark-mode .today-card:hover {
+    background-color: var(--dark-desaturated-blue-card-bg);
+}
+
+.dark-mode .account-name,
+.dark-mode .reactions {
+    color: var(--desaturated-blue-text);
+}
+
+.dark-mode .instagram {
+    background-image: linear-gradient(to right, var(--very-dark-blue-top-bg-pattern), var(--very-dark-blue-top-bg-pattern)), var(--instagram);
+}
+
+.dark-mode .instagram:hover {
+    background-image: linear-gradient(to right, var(--dark-desaturated-blue-card-bg), var(--dark-desaturated-blue-card-bg)), var(--instagram);
+}
+
+/* Media queries */
+@media (max-width: 700px) {
+    header {
+        margin-bottom: 5em;
+    }
+
+    #header-div {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #header-div div:first-child {
+        border-bottom: 1.5px solid var(--toggle-light);
+        width: 100%;
+    }
+
+    .dark-mode #header-div div:first-child {
+        border-bottom: 1.5px solid var(--dark-desaturated-blue-card-bg);
+        width: 100%;
+    }
+
+    #header-div div {
+        padding: 1em 0;
+    }
+}
+
+@media (max-width: 475px) {
+    header {
+        margin-bottom: 7em;
+    }
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 12px;
+    }
+
+    header div,
+    #dark-mode-toggle {
+        width: 100%;   
+    }
+
+    section {
+        width: 90%;
+    }
+
+    .card {
+        height: 180px;
+    }
+}
