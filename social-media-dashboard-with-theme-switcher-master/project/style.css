@@ -76,6 +76,8 @@ h1 {
 }
 
 #toggle {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     background-color: var(--toggle-light);
     border-radius: 30px;
