@@ -1,0 +1,29 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main section */
+
+/* Text section */
+#text-section {
+    flex-wrap: wrap;
+}
+
+#logo {
+    align-self: flex-start;
+    border: 1px solid red;
+}
+
+#text {
+    align-content: center;
+    border: 1px solid red;
+    
+}
+
+/* General classes */
+.flex {
+    display: flex;
+}
