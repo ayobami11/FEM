@@ -1,0 +1,36 @@
+.country {
+    background: var(--dark-blue);
+    border-radius: .75em;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .15);
+    line-height: 2.5em;
+}
+
+.country-flag {
+    border-radius: .75em 0.75em 0 0;
+}
+
+.country-name,
+.country-text {
+    padding-left: 2em;  
+}
+
+.country-name {
+    padding-top: 1em;
+}
+
+.country-text {
+    padding: 1.25em 2em 2em;
+}
+
+.country strong {
+    font-weight: var(--font-weight-thick);
+}
+
+.country-flag {
+    height: 200px;
+}
+
+/* Light mode */
+.light-mode .country {
+    background: var(--white);
+}

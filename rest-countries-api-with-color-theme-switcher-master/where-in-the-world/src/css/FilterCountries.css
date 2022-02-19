@@ -1,0 +1,79 @@
+::-webkit-input-placeholder {
+    color: var(--white);
+}
+::-ms-input-placeholder {
+    color: var(--white);
+}
+::placeholder {
+    color: var(--white);
+}
+
+.search-country-container {
+    margin: 1em 0;
+    position: relative;
+}
+
+.fa-search {
+    position: absolute;
+    padding: 1.5em 2em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-country,
+.search-region {
+    background: var(--dark-blue);
+    border: none;
+    border-radius: 0.25em;
+    color: inherit;
+    outline: none;
+}
+
+.search-country {
+    border-radius: 0.5em;
+    padding: 1em;
+    padding-left: 5em;
+    width: 100%;
+}
+
+.search-region-container {
+    margin: 1em 0;
+    position: relative;
+    width: 170px;
+}
+
+.search-region {
+    appearance: none;
+    margin: 0.5em 0;
+    padding: 1.25em 1.5em;
+    width: 100%;
+}
+
+.fa-chevron-down {
+    padding: 1em;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.display-none {
+    display: none;
+}
+
+/* Light mode */
+.light-mode ::-webkit-input-placeholder {
+    color: var(--dark-gray);
+}
+.light-mode ::-ms-input-placeholder {
+    color: var(--dark-gray);
+}
+.light-mode ::placeholder {
+    color: var(--dark-gray);
+}
+
+.light-mode .search-country,
+.light-mode .search-region {
+    background: var(--white);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
